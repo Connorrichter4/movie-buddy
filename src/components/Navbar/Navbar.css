@@ -1,0 +1,26 @@
+nav {
+    background: rgb(72, 72, 72);
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.nav-link{
+    text-decoration: none;
+    color: white;
+    display: flex;
+    align-items: center;
+}
+
+.right-side-nav {
+    width: 50vw;
+    display: flex;
+    justify-content: space-around;
+    font-size: 20px;
+}
+
+.app-name {
+    font-family: 'Pacifico', cursive;
+    font-size: 26px;
+    color: rgb(225, 225, 225);
+}
