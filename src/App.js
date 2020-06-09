@@ -5,6 +5,7 @@ import MovieList from './components/MovieList/MovieList';
 import MovieDetail from './components/MovieDetail/MovieDetail';
 import ReviewList from './components/ReviewList/ReviewList';
 import ReviewDetail from './components/ReviewDetail/ReviewDetail';
+import Home from './components/Home/Home'
 import './App.css';
 
 function App() {
@@ -12,6 +13,7 @@ function App() {
 		<div className='main'>
 			<Route path='*' component={Navbar} />
 			<Switch>
+				<Route path='/' exact component={Home} />
 				<Route path='/movies' exact component={MovieList} />
 				<Route path='/reviews' exact component={ReviewList} />
 				<Route

@@ -1,0 +1,29 @@
+.movie-container {
+    display: flex;
+    width: 80vw;
+    margin: 0 auto 1rem auto;
+}
+.description {
+    margin: 1rem;
+    font-size: 18px;
+    text-align: justify;
+}
+.trailer {
+    margin: 0 auto 1rem auto;
+}
+.divider {
+    width: 90vw;
+    margin: 0 auto 1rem auto;
+    font-size: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+.divider div:first-child, .divider div:last-child {
+    background-color: #5c80bc;
+}
+.divider div:first-child {
+    width: 10vw;
+}
+.divider div:last-child {
+    width: 70vw;
+}
