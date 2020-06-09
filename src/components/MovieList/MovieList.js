@@ -25,7 +25,7 @@ function MovieList() {
 	return (
 		<div>
 			{movies.map((movie) => (
-				<div key={movie._id}>
+				<div key={movie.id}>
 					<img src={movie.image_url} alt={movie.title} />
 				</div>
 			))}
