@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import Toggle from '../Toggle/Toggle';
 import './Navbar.css';
 
 function Navbar() {
@@ -15,7 +16,16 @@ function Navbar() {
 				<Link to='/reviews' className='nav-link'>
 					Reviews
 				</Link>
-				<button className='nav-link'>Menu</button>
+				{/* <Toggle
+					render={({on, toggle}) => (
+						<div>
+							{on && <h1>Show</h1>}
+							<button onClick={toggle} className='nav-link'>
+								Menu
+							</button>
+						</div>
+					)}
+				/> */}
 			</div>
 		</nav>
 	);

@@ -25,9 +25,9 @@ function ReviewList() {
 	return (
 		<div>
 			{reviews.map((review) => (
-				<div key={review.id}>
+				<Link to={`/reviews/${review.id}`} key={review.id}>
 					<p>{review.title}</p>
-				</div>
+				</Link>
 			))}
 		</div>
 	);
