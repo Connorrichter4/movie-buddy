@@ -26,7 +26,7 @@ function ReviewList() {
 		<div>
 			{reviews.map((review) => (
 				<Link to={`/reviews/${review.id}`} key={review.id}>
-					<p>{review.title}</p>
+					<p>{review.title} - <span>{review.owner}</span></p>
 				</Link>
 			))}
 		</div>
