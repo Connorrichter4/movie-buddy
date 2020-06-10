@@ -1,7 +1,6 @@
 nav {
-	/* background: #4d5061; */
 	background: #30323d;
-	padding: 15px;
+	padding: 0 10px;
 	display: flex;
 	justify-content: space-between;
 }
@@ -23,4 +22,30 @@ nav {
 .app-name {
 	font-family: 'Pacifico', cursive;
 	font-size: 26px;
+}
+
+.side-bar-container {
+	background:rgba(0, 0, 0, 0.386);
+	z-index: 1;
+	position: fixed;
+	right: 0;
+	width: 100vw;
+	height: 100vh;
+}
+.side-bar {
+	/* background: #cdd1c4; */
+	background: #30323dd9;
+	/* color: #2f313c; */
+	z-index: 1;
+	position: fixed;
+	right: 0;
+	width: 100vw;
+}
+
+.menu-item {
+	padding: 10px;
+}
+
+.menu-item:hover {
+	background: #30323dc4;
 }

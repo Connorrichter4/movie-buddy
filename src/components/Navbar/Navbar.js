@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import Toggle from '../Toggle/Toggle';
 import './Navbar.css';
 
-function Navbar() {
+function NavBar() {
 	return (
 		<nav>
 			<Link to='/' className='app-name nav-link'>
@@ -16,19 +16,33 @@ function Navbar() {
 				<Link to='/reviews' className='nav-link'>
 					Reviews
 				</Link>
-				{/* <Toggle
-					render={({on, toggle}) => (
+				<Toggle
+					render={({ on, toggle }) => (
 						<div>
-							{on && <h1>Show</h1>}
-							<button onClick={toggle} className='nav-link'>
+							<p onClick={toggle} className='nav-link'>
 								Menu
-							</button>
+							</p>
+							{on && (
+								<div className='side-bar-container' onClick={toggle}>
+									<div className='side-bar'>
+										<Link to='/signup' className='nav-link menu-item'>
+											Sign Up
+										</Link>
+										<Link to='/movies' className='nav-link menu-item'>
+											Movies
+										</Link>
+										<Link to='/reviews' className='nav-link menu-item'>
+											Reviews
+										</Link>
+									</div>
+								</div>
+							)}
 						</div>
 					)}
-				/> */}
+				/>
 			</div>
 		</nav>
 	);
 }
 
-export default Navbar;
+export default NavBar;
