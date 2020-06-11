@@ -3,6 +3,9 @@ nav {
 	padding: 0 10px;
 	display: flex;
 	justify-content: space-between;
+	position: fixed;
+	top: 0;
+	width: 100%;
 }
 
 .nav-link {
@@ -26,7 +29,7 @@ nav {
 }
 
 .side-bar-container {
-	background:rgba(0, 0, 0, 0.386);
+	background: rgba(0, 0, 0, 0.386);
 	z-index: 1;
 	position: fixed;
 	right: 0;

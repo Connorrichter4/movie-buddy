@@ -1,8 +1,9 @@
 .home-image {
     background-image: url('/movie-theater-gettyimages-530640869.jpg');
     background-size: cover;
-    background-position: center;
-    height: 50vh;
+    background-position: bottom;
+    background-attachment: fixed;
+    height: 30rem;
 }
 .main-text {
     font-size: 3rem;

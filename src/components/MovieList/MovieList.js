@@ -35,8 +35,8 @@ function MovieList() {
 				)}
 			</h1>
 			{movies.map((movie) => (
-				<Link to={`/movies/${movie.id}`} key={movie.id}>
-					<img src={movie.image_url} alt={movie.title} />
+				<Link to={`/movies/${movie.id}`} key={movie.id} className='movie-link'>
+					<img className='movie-image' src={movie.image_url} alt={movie.title} />
 				</Link>
 			))}
 		</div>

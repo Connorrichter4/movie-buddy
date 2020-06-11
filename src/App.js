@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React from 'react';
 import { Route, Switch, useHistory } from 'react-router-dom';
 import NavBar from './components/NavBar/NavBar';
 import MovieList from './components/MovieList/MovieList';
@@ -10,18 +10,15 @@ import SignUp from './components/SignUp/SignUp';
 import Login from './components/Login/Login';
 import ReviewCreate from './components/ReviewCreate/ReviewCreate';
 import ReviewEdit from './components/ReviewEdit/ReviewEdit'
+import MovieCreate from './components/MovieCreate/MovieCreate';
 import './App.css';
 
 function App() {
-
-	// const [logged_In, setLoggedIn] = useState(localStorage.getItem('token') ? true: false)
-	// const [username, setUsername] = useState('')
 
 	let history = useHistory()
 	const handleLogout = () => {
 		localStorage.removeItem('token');
 		localStorage.removeItem('username');
-		// setUsername('');
 		history.push('/login')
 	}
 
@@ -65,6 +62,13 @@ function App() {
 					path='/movies/:id'
 					render={(routerProps) => {
 						return <MovieDetail movieId={routerProps.match.params.id} />;
+					}}
+				/>
+				<Route
+					exact
+					path='/create/movie'
+					render={() => {
+						return <MovieCreate />;
 					}}
 				/>
 				<Route
