@@ -24,6 +24,10 @@ function MovieList() {
 
 	return (
 		<div>
+			<h1>
+				Movies
+				{localStorage.getItem('token') && <Link to='/'>(+)</Link>}
+			</h1>
 			{movies.map((movie) => (
 				<Link to={`/movies/${movie.id}`} key={movie.id}>
 					<img src={movie.image_url} alt={movie.title} />

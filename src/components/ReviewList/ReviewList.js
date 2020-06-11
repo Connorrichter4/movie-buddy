@@ -24,9 +24,15 @@ function ReviewList() {
 
 	return (
 		<div>
+			<h1>
+				Reviews
+				{localStorage.getItem('token') && <Link to='/' >(+)</Link>}
+			</h1>
 			{reviews.map((review) => (
 				<Link to={`/reviews/${review.id}`} key={review.id}>
-					<p>{review.title} - <span>{review.owner}</span></p>
+					<p>
+						{review.title} - <span>{review.owner}</span>
+					</p>
 				</Link>
 			))}
 		</div>

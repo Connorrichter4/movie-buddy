@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import Toggle from '../Toggle/Toggle';
+import { GridFill, PeopleFill } from 'react-bootstrap-icons'
 import './Navbar.css';
 
 function NavBar(props) {
@@ -16,11 +17,14 @@ function NavBar(props) {
 				<Link to='/reviews' className='nav-link'>
 					Reviews
 				</Link>
+				{localStorage.getItem('token') && (
+					<p className='nav-link'>{localStorage.getItem('username')}</p>
+				)}
 				<Toggle
 					render={({ on, toggle }) => (
 						<div>
 							<p onClick={toggle} className='nav-link'>
-								Menu
+								<GridFill />
 							</p>
 							{on && (
 								<div className='side-bar-container' onClick={toggle}>
@@ -31,6 +35,7 @@ function NavBar(props) {
 													Sign Up
 												</Link>
 												<Link to='/login' className='nav-link menu-item'>
+													<PeopleFill />
 													Login
 												</Link>
 											</>
@@ -46,7 +51,9 @@ function NavBar(props) {
 												<Link to='/create/movie' className='nav-link menu-item'>
 													Create Movie
 												</Link>
-												<Link to='/create/review' className='nav-link menu-item'>
+												<Link
+													to='/create/review'
+													className='nav-link menu-item'>
 													Create Review
 												</Link>
 											</>
@@ -57,9 +64,6 @@ function NavBar(props) {
 						</div>
 					)}
 				/>
-				{localStorage.getItem('token') && (
-					<p className='nav-link'>{localStorage.getItem('username')}</p>
-				)}
 			</div>
 		</nav>
 	);
