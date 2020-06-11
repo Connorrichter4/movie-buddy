@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import './ReviewForm.css';
 import {APIURL} from '../../config';
 
-function ReviewForm() {
+function ReviewForm(props) {
 	const [movies, setMovies] = useState([]);
 
 	useEffect(() => {
@@ -10,37 +10,45 @@ function ReviewForm() {
 			.then((res) => res.json())
 			.then((data) => {
 				setMovies(data);
-				console.log(data);
 			})
 			.catch(console.error);
 	}, []);
 
 	return (
-		<form className='review-form'>
+		<form className='review-form' onSubmit={props.handleSubmit}>
 			<label htmlFor='title'>Title:</label>
 			<input
 				type='text'
 				placeholder='Add review title'
-				required
 				name='title'
+				onChange={props.handleChange}
 				className='input-area'
 			/>
 			<label htmlFor='body'>Body:</label>
 			<textarea
 				rows='12'
 				placeholder='Add review here'
-				required
-				name='body'
+				name='review_body'
+				onChange={props.handleChange}
 				className='input-area'
 			/>
-			<label htmlFor='body'>Movie:</label>
-			<select required name='movie' className='input-area' placeholder='Select a Movie'>
+			<label htmlFor='movie'>Movie:</label>
+			<select name='movie' className='input-area' onChange={props.handleChange}>
+				<option defaultValue>Select a movie</option>
 				{movies.map((movie) => (
 					<option key={movie.id} value={movie.id}>
 						{movie.title}
 					</option>
 				))}
 			</select>
+			{props.validate && (
+				<p className='review-error'>
+					All fields are required
+				</p>
+			)}
+			<button type='submit' className='submit-button'>
+				Submit
+			</button>
 		</form>
 	);
 }
