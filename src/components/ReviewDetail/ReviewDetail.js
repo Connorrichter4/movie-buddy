@@ -15,6 +15,7 @@ function ReviewDetail({ reviewId }) {
 			.catch(() => {
 				setError(true);
 			});
+	// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, []);
 
 	if (error) {

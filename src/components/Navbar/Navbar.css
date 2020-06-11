@@ -10,6 +10,7 @@ nav {
 	color: #e8c547;
 	display: flex;
 	align-items: center;
+	cursor: pointer;
 }
 
 .right-side-nav {

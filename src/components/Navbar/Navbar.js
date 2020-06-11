@@ -32,16 +32,24 @@ function NavBar(props) {
 												</Link>
 												<Link to='/login' className='nav-link menu-item'>
 													Login
-												</Link>{' '}
+												</Link>
 											</>
 										)}
 										{localStorage.getItem('token') && (
-											<p
-												to='/logout'
-												className='nav-link menu-item'
-												onClick={props.handleLogout}>
-												Log Out
-											</p>
+											<>
+												<div
+													to='/logout'
+													className='nav-link menu-item'
+													onClick={props.handleLogout}>
+													Log Out
+												</div>
+												<Link to='/create/movie' className='nav-link menu-item'>
+													Create Movie
+												</Link>
+												<Link to='/create/review' className='nav-link menu-item'>
+													Create Review
+												</Link>
+											</>
 										)}
 									</div>
 								</div>
@@ -49,7 +57,9 @@ function NavBar(props) {
 						</div>
 					)}
 				/>
-				{localStorage.getItem('token') && <p className='nav-link'>Username</p>}
+				{localStorage.getItem('token') && (
+					<p className='nav-link'>{localStorage.getItem('username')}</p>
+				)}
 			</div>
 		</nav>
 	);

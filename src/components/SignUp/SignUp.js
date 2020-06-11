@@ -12,6 +12,7 @@ function SignUp() {
 
 	const [signUp, setSignUp] = useState(initialState);
 	const [success, setSuccess] = useState(false);
+	const [errorExists, setErrorExists] = useState(false);
 
 	const handleChange = (event) => {
 		event.persist();
@@ -28,30 +29,36 @@ function SignUp() {
 			},
 			body: JSON.stringify(signUp),
 		})
-			.then((response) => response.json())
+			.then((response) => {
+				console.log(response.ok);
+				if (response.ok) {
+					return response.json();
+				} else {
+					setErrorExists(true);
+				}
+			})
 			.then((data) => {
-				console.log(data);
-				console.log('logging in');
-				fetch(`${APIURL}/api/token/`, {
-					method: 'POST',
-					headers: {
-						'Content-Type': 'application/json',
-					},
-					body: JSON.stringify({
-						username: signUp.username,
-						password: signUp.password,
-					}),
-				})
-					.then((response) => response.json())
-					.then((data) => {
-						console.log(data);
-						console.log('logged in');
+				if (data !== undefined) {
+					fetch(`${APIURL}/api/token/`, {
+						method: 'POST',
+						headers: {
+							'Content-Type': 'application/json',
+						},
+						body: JSON.stringify({
+							username: signUp.username,
+							password: signUp.password,
+						}),
 					})
-					.catch(console.error);
+						.then((response) => response.json())
+						.then((data) => {
+							localStorage.setItem('token', data.access);
+							localStorage.setItem('username', signUp.username);
+							setSuccess(true);
+						})
+						.catch(console.error);
+				}
 			})
 			.catch(console.error);
-
-		return <Redirect to='/' />;
 	};
 
 	if (success) {
@@ -83,6 +90,12 @@ function SignUp() {
 					placeholder='Password'
 					onChange={handleChange}
 				/>
+				{errorExists && (
+					<p className='error-message'>
+						That username or email combination already exists. Please try again
+						or login.
+					</p>
+				)}
 				<button type='submit' className='submit-button'>
 					Submit
 				</button>

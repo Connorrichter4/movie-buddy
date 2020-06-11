@@ -12,11 +12,14 @@ import './App.css';
 
 function App() {
 
-	const [logged_In, setLoggedIn] = useState(localStorage.getItem('token') ? true: false)
+	// const [logged_In, setLoggedIn] = useState(localStorage.getItem('token') ? true: false)
+	// const [username, setUsername] = useState('')
 
 	let history = useHistory()
 	const handleLogout = () => {
 		localStorage.removeItem('token');
+		localStorage.removeItem('username');
+		// setUsername('');
 		history.push('/login')
 	}
 
@@ -50,14 +53,14 @@ function App() {
 					exact
 					path='/signup'
 					render={() => {
-						return <SignUp />;
+						return <SignUp  />;
 					}}
 				/>
 				<Route
 					exact
 					path='/login'
 					render={() => {
-						return <Login />;
+						return <Login  />;
 					}}
 				/>
 			</Switch>
