@@ -23,6 +23,7 @@ function ReviewForm(props) {
 				name='title'
 				onChange={props.handleChange}
 				className='input-area'
+				value={props.review.title}
 			/>
 			<label htmlFor='body'>Body:</label>
 			<textarea
@@ -31,10 +32,11 @@ function ReviewForm(props) {
 				name='review_body'
 				onChange={props.handleChange}
 				className='input-area'
+				value={props.review.review_body}
 			/>
 			<label htmlFor='movie'>Movie:</label>
-			<select name='movie' className='input-area' onChange={props.handleChange}>
-				<option defaultValue>Select a movie</option>
+			<select name='movie' className='input-area' onChange={props.handleChange} value={props.review.movie}>
+				<option defaultValue='' value=''>Select a movie</option>
 				{movies.map((movie) => (
 					<option key={movie.id} value={movie.id}>
 						{movie.title}

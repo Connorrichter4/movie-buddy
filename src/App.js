@@ -9,6 +9,7 @@ import Home from './components/Home/Home';
 import SignUp from './components/SignUp/SignUp';
 import Login from './components/Login/Login';
 import ReviewCreate from './components/ReviewCreate/ReviewCreate';
+import ReviewEdit from './components/ReviewEdit/ReviewEdit'
 import './App.css';
 
 function App() {
@@ -48,6 +49,13 @@ function App() {
 					path='/create/review'
 					render={() => {
 						return <ReviewCreate />;
+					}}
+				/>
+				<Route
+					exact
+					path='/reviews/edit/:id'
+					render={(routerProps) => {
+						return <ReviewEdit reviewId={routerProps.match.params.id} />;
 					}}
 				/>
 				{/* Movie Paths */}

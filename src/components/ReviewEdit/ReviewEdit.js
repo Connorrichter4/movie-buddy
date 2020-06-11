@@ -1,9 +1,9 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import ReviewForm from '../ReviewForm/ReviewForm';
 import { APIURL } from '../../config';
-import {Redirect} from 'react-router-dom'
+import { Redirect } from 'react-router-dom';
 
-function ReviewCreate() {
+function ReviewEdit(props) {
 	const initialState = {
 		title: '',
 		movie: '',
@@ -13,8 +13,16 @@ function ReviewCreate() {
 	const [review, setReview] = useState(initialState);
 	const [validate, setValidate] = useState(false);
 	const [success, setSuccess] = useState(false);
-	const [newReviewId, setNewReviewId] = useState('');
-	// const [errorExists, setErrorExists] = useState(false);
+
+	useEffect(() => {
+		fetch(`${APIURL}/reviews/${props.reviewId}`)
+			.then((response) => response.json())
+			.then((data) => {
+				console.log(data);
+				setReview(data);
+			});
+		// eslint-disable-next-line react-hooks/exhaustive-deps
+	}, []);
 
 	const validateData = () => {
 		for (const value in review) {
@@ -35,8 +43,8 @@ function ReviewCreate() {
 		event.preventDefault();
 
 		if (validateData()) {
-			fetch(`${APIURL}/reviews/`, {
-				method: 'POST',
+			fetch(`${APIURL}/reviews/${review.id}`, {
+				method: 'PUT',
 				headers: {
 					'Content-Type': 'application/json',
 					Authorization: `Bearer ${localStorage.getItem('token')}`,
@@ -50,7 +58,6 @@ function ReviewCreate() {
 				.then((response) => response.json())
 				.then((data) => {
 					console.log(data);
-					setNewReviewId(data.id);
 					setSuccess(true);
 				})
 				.catch(console.error);
@@ -58,20 +65,20 @@ function ReviewCreate() {
 	};
 
 	if (success) {
-		return <Redirect to={`/reviews/${newReviewId}`} />;
+		return <Redirect to={`/reviews/${review.id}`} />;
 	}
 
 	return (
 		<>
-			<h1>Create Review</h1>
+			<h1>Edit Code</h1>
 			<ReviewForm
+				review={review}
 				handleChange={handleChange}
 				handleSubmit={handleSubmit}
 				validate={validate}
-				review={review}
 			/>
 		</>
 	);
 }
 
-export default ReviewCreate;
+export default ReviewEdit;
