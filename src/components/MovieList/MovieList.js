@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { APIURL } from '../../config';
+import { PlusCircle } from 'react-bootstrap-icons'
+import './MovieList.css'
 
 function MovieList() {
 	const [movies, setMovies] = useState([]);
@@ -26,7 +28,11 @@ function MovieList() {
 		<div>
 			<h1>
 				Movies
-				{localStorage.getItem('token') && <Link to='/'>(+)</Link>}
+				{localStorage.getItem('token') && (
+					<Link to='/create/movie' className='create-movie'>
+						<PlusCircle color='#30323d' size='24px' />
+					</Link>
+				)}
 			</h1>
 			{movies.map((movie) => (
 				<Link to={`/movies/${movie.id}`} key={movie.id}>

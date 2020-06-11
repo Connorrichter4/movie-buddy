@@ -8,6 +8,7 @@ import ReviewDetail from './components/ReviewDetail/ReviewDetail';
 import Home from './components/Home/Home';
 import SignUp from './components/SignUp/SignUp';
 import Login from './components/Login/Login';
+import ReviewCreate from './components/ReviewCreate/ReviewCreate';
 import './App.css';
 
 function App() {
@@ -33,7 +34,7 @@ function App() {
 			/>
 			<Switch>
 				<Route path='/' exact component={Home} />
-				<Route path='/movies' exact component={MovieList} />
+				{/* Review Paths */}
 				<Route path='/reviews' exact component={ReviewList} />
 				<Route
 					exact
@@ -42,6 +43,15 @@ function App() {
 						return <ReviewDetail reviewId={routerProps.match.params.id} />;
 					}}
 				/>
+				<Route
+					exact
+					path='/create/review'
+					render={() => {
+						return <ReviewCreate />;
+					}}
+				/>
+				{/* Movie Paths */}
+				<Route path='/movies' exact component={MovieList} />
 				<Route
 					exact
 					path='/movies/:id'
@@ -53,14 +63,14 @@ function App() {
 					exact
 					path='/signup'
 					render={() => {
-						return <SignUp  />;
+						return <SignUp />;
 					}}
 				/>
 				<Route
 					exact
 					path='/login'
 					render={() => {
-						return <Login  />;
+						return <Login />;
 					}}
 				/>
 			</Switch>

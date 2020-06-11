@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { APIURL } from '../../config';
+import { PlusCircle } from 'react-bootstrap-icons';
+import './ReviewList.css'
 
 function ReviewList() {
 	const [reviews, setReviews] = useState([]);
@@ -26,7 +28,11 @@ function ReviewList() {
 		<div>
 			<h1>
 				Reviews
-				{localStorage.getItem('token') && <Link to='/' >(+)</Link>}
+				{localStorage.getItem('token') && (
+					<Link to='/create/review' className='create-review'>
+						<PlusCircle color='#30323d' size='24px' />
+					</Link>
+				)}
 			</h1>
 			{reviews.map((review) => (
 				<Link to={`/reviews/${review.id}`} key={review.id}>
