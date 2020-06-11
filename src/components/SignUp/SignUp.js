@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Redirect } from 'react-router-dom';
 import { APIURL } from '../../config';
 import './SignUp.css';
 
@@ -10,6 +11,7 @@ function SignUp() {
 	};
 
 	const [signUp, setSignUp] = useState(initialState);
+	const [success, setSuccess] = useState(false);
 
 	const handleChange = (event) => {
 		event.persist();
@@ -48,7 +50,13 @@ function SignUp() {
 					.catch(console.error);
 			})
 			.catch(console.error);
+
+		return <Redirect to='/' />;
 	};
+
+	if (success) {
+		return <Redirect to='/' />;
+	}
 
 	return (
 		<div className='signup-container'>
