@@ -6,3 +6,8 @@
     border-radius: 5px;
     margin-top: 15px;
 }
+
+.main-body {
+    margin: 0 auto;
+    padding-top: 3rem;
+}

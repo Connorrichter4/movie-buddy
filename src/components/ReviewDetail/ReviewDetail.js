@@ -24,8 +24,7 @@ function ReviewDetail({ reviewId }) {
 		return <div>There was an error retrieving the code</div>;
 	}
 
-	const deleteReview = (event) => {
-		event.preventDefault();
+	const deleteReview = () => {
 		fetch(`${APIURL}/reviews/${reviewId}`, {
 			method: 'DELETE',
 			headers: {

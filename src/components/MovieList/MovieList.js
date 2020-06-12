@@ -13,7 +13,7 @@ function MovieList() {
 			.then((res) => res.json())
 			.then((data) => {
                 setMovies(data);
-                console.log(data)
+                console.log(data);
 			})
 			.catch(() => {
 				setError(true);
@@ -21,7 +21,11 @@ function MovieList() {
 	},[]);
 
 	if (error) {
-		return <div>There was an error retrieving the code</div>;
+		return (
+			<div className='error-retrieve'>
+				There was an error retrieving the movies
+			</div>
+		);
 	}
 
 	return (

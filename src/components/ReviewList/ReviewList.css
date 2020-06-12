@@ -1,3 +1,8 @@
 .create-review {
     margin-left: 2rem;
 }
+.error-retrieve {
+    padding-top: 2rem;
+    text-align: center;
+    font-size: 20px;
+}

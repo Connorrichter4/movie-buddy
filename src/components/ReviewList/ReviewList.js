@@ -21,7 +21,7 @@ function ReviewList() {
 	}, []);
 
 	if (error) {
-		return <div>There was an error retrieving the code</div>;
+		return <div className='error-retrieve'>There was an error retrieving the reviews</div>;
 	}
 
 	return (
@@ -41,6 +41,7 @@ function ReviewList() {
 					</p>
 				</Link>
 			))}
+			{reviews.length===0 && <div>There are no reviews yet!</div>}
 		</div>
 	);
 }

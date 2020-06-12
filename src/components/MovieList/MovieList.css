@@ -3,10 +3,15 @@
 }
 
 .movie-link {
-    border: solid red;
+    
 }
 
 .movie-image {
-    border: solid green;
+    
     height: 300px;
+}
+.error-retrieve {
+    padding-top: 2rem;
+    text-align: center;
+    font-size: 20px;
 }

@@ -13,6 +13,7 @@ function MovieDetail({ movieId }) {
 			.then((res) => res.json())
 			.then((data) => {
 				setMovie(data);
+				console.log(data);
 			})
 			.catch(() => {
 				setError(true);
@@ -29,7 +30,7 @@ function MovieDetail({ movieId }) {
 	}
 
 	return (
-		<>
+		<div>
 			<h1>
 				{movie.title} - ({movie.year_released})
 			</h1>
@@ -55,7 +56,8 @@ function MovieDetail({ movieId }) {
 					</p>
 				</Link>
 			))}
-		</>
+			{movie.reviews.length === 0 && <div>There are no reviews yet!</div>}
+		</div>
 	);
 }
 
