@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import Toggle from '../Toggle/Toggle';
-import { GridFill, PeopleFill } from 'react-bootstrap-icons'
+import { List, PeopleFill } from 'react-bootstrap-icons';
 import './Navbar.css';
 
 function NavBar(props) {
@@ -11,20 +11,17 @@ function NavBar(props) {
 				MovieBuddy
 			</Link>
 			<div className='right-side-nav'>
-				<Link to='/movies' className='nav-link'>
+				{/* <Link to='/movies' className='nav-link'>
 					Movies
 				</Link>
 				<Link to='/reviews' className='nav-link'>
 					Reviews
-				</Link>
-				{localStorage.getItem('token') && (
-					<p className='nav-link'>{localStorage.getItem('username')}</p>
-				)}
+				</Link> */}
 				<Toggle
 					render={({ on, toggle }) => (
 						<div>
 							<p onClick={toggle} className='nav-link'>
-								<GridFill />
+								<List size='26px' />
 							</p>
 							{on && (
 								<div className='side-bar-container' onClick={toggle}>
@@ -49,21 +46,30 @@ function NavBar(props) {
 													Log Out
 												</div>
 												<Link to='/create/movie' className='nav-link menu-item'>
-													Create Movie
+													Add A Movie
 												</Link>
 												<Link
 													to='/create/review'
 													className='nav-link menu-item'>
-													Create Review
+													Add A Review
 												</Link>
 											</>
 										)}
+										<Link to='/movies' className='nav-link menu-item'>
+											Movies
+										</Link>
+										<Link to='/reviews' className='nav-link menu-item'>
+											Reviews
+										</Link>
 									</div>
 								</div>
 							)}
 						</div>
 					)}
 				/>
+				{localStorage.getItem('token') && (
+					<p className='nav-link'>{localStorage.getItem('username')}</p>
+				)}
 			</div>
 		</nav>
 	);

@@ -31,7 +31,7 @@ function MovieDetail({ movieId }) {
 
 	return (
 		<div>
-			<h1>
+			<h1 className='movie-header'>
 				{movie.title} - ({movie.year_released})
 			</h1>
 			<div className='movie-container'>
@@ -49,13 +49,19 @@ function MovieDetail({ movieId }) {
 				<span>Reviews</span>
 				<div></div>
 			</div>
-			{movie.reviews.map((review) => (
-				<Link to={`/reviews/${review.id}`} key={review.id}>
-					<p>
-						{review.title} - <span>{review.owner}</span>
-					</p>
-				</Link>
-			))}
+			<div className='review-container'>
+				{movie.reviews.map((review) => (
+					<Link to={`/reviews/${review.id}`} key={review.id} className='review'>
+						<h2 className='review-title'>{review.title}</h2>
+						<p className='review-owner'>
+							{review.owner} - {review.created.substr(5, 5)}
+						</p>
+						<p className='review-body'>
+							{review.review_body.substr(0, 100)}...
+						</p>
+					</Link>
+				))}
+			</div>
 			{movie.reviews.length === 0 && <div>There are no reviews yet!</div>}
 		</div>
 	);
