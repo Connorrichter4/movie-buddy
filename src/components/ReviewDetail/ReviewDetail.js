@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { APIURL } from '../../config';
 import { Redirect, Link } from 'react-router-dom';
+import { ArrowLeftCircle } from 'react-bootstrap-icons';
+import './ReviewDetail.css';
 
 function ReviewDetail({ reviewId }) {
 	const [review, setReview] = useState();
@@ -45,7 +47,12 @@ function ReviewDetail({ reviewId }) {
 	}
 
 	return (
-		<div>
+		<div className='review-container'>
+			<Link to='/reviews' className='review-back'>
+				<ArrowLeftCircle size='20px' />
+				<p className='review-back-text'>
+					Back to reviews
+				</p></Link>
 			<h1>{review.title}</h1>
 			<p>Written by: {review.owner}</p>
 			<p>{review.review_body}</p>

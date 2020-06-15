@@ -51,7 +51,7 @@ function NavBar(props) {
 												<Link
 													to='/create/review'
 													className='nav-link menu-item'>
-													Add A Review
+													Create A Review
 												</Link>
 											</>
 										)}

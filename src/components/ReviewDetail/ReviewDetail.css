@@ -1,0 +1,15 @@
+.review-back {
+    margin-top: 2rem;
+    text-decoration: none;
+    color: #30323d;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+}
+.review-back:hover {
+    text-decoration: underline;
+}
+
+.review-back-text {
+    margin: 0 1rem;
+}
