@@ -70,7 +70,7 @@ function ReviewEdit(props) {
 
 	return (
 		<>
-			<h1>Edit Code</h1>
+			<h1>Edit Review</h1>
 			<ReviewForm
 				review={review}
 				handleChange={handleChange}

@@ -39,8 +39,16 @@ function MovieDetail({ movieId }) {
 			<h1 className='movie-header'>
 				{movie.title} - ({movie.year_released})
 			</h1>
+			<div>
+				<Link to={`/movies/edit/${movie.id}`}>Edit</Link>
+				{/* <button onClick={deleteReview}>Delete</button> */}
+			</div>
 			<div className='movie-container'>
-				<img src={movie.image_url} alt={movie.title} className='movie-detail-image' />
+				<img
+					src={movie.image_url}
+					alt={movie.title}
+					className='movie-detail-image'
+				/>
 				<p className='description'>{movie.description}</p>
 			</div>
 			<div className='divider'>
@@ -67,7 +75,9 @@ function MovieDetail({ movieId }) {
 					</Link>
 				))}
 			</div>
-			{movie.reviews.length === 0 && <div className='movie-reviews'>There are no reviews yet!</div>}
+			{movie.reviews.length === 0 && (
+				<div className='movie-reviews'>There are no reviews yet!</div>
+			)}
 		</div>
 	);
 }

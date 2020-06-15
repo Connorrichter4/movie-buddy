@@ -3,14 +3,15 @@ import { Route, Switch, useHistory } from 'react-router-dom';
 import NavBar from './components/NavBar/NavBar';
 import MovieList from './components/MovieList/MovieList';
 import MovieDetail from './components/MovieDetail/MovieDetail';
+import MovieCreate from './components/MovieCreate/MovieCreate';
+import MovieEdit from './components/MovieEdit/MovieEdit'
 import ReviewList from './components/ReviewList/ReviewList';
 import ReviewDetail from './components/ReviewDetail/ReviewDetail';
+import ReviewCreate from './components/ReviewCreate/ReviewCreate';
+import ReviewEdit from './components/ReviewEdit/ReviewEdit';
 import Home from './components/Home/Home';
 import SignUp from './components/SignUp/SignUp';
 import Login from './components/Login/Login';
-import ReviewCreate from './components/ReviewCreate/ReviewCreate';
-import ReviewEdit from './components/ReviewEdit/ReviewEdit';
-import MovieCreate from './components/MovieCreate/MovieCreate';
 import './App.css';
 
 function App() {
@@ -69,6 +70,13 @@ function App() {
 						path='/create/movie'
 						render={() => {
 							return <MovieCreate />;
+						}}
+					/>
+					<Route
+						exact
+						path='/movies/edit/:id'
+						render={(routerProps) => {
+							return <MovieEdit movieId={routerProps.match.params.id} />;
 						}}
 					/>
 					<Route
