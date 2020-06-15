@@ -15,7 +15,6 @@ function Home() {
 			.then((data) => {
 				data.sort((a, b) => (a.updated_at - b.updated_at ? 1 : -1));
 				setReviews(data.slice(0, 3));
-				console.log(data);
 			})
 			.catch(() => {
 				setError(true);
@@ -25,8 +24,7 @@ function Home() {
 			.then((res) => res.json())
 			.then((data) => {
 				data.sort((a, b) => (a.created - b.created ? 1 : -1));
-				setMovies(data.slice(0,4));
-				console.log(data.slice(0,4));
+				setMovies(data.slice(0,5));
 			})
 			.catch(() => {
 				setError(true);

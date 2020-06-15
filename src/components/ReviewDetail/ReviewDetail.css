@@ -13,3 +13,9 @@
 .review-back-text {
     margin: 0 1rem;
 }
+
+.review-loading {
+	font-size: 20px;
+	padding-top: 2rem;
+	text-align: center;
+}

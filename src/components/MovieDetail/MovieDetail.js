@@ -27,7 +27,7 @@ function MovieDetail({ movieId }) {
 	}
 
 	if (!movie) {
-		return <p>Loading ...</p>;
+		return <p className='movie-loading'>Loading ...</p>;
 	}
 
 	return (

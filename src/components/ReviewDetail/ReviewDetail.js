@@ -43,7 +43,7 @@ function ReviewDetail({ reviewId }) {
 	}
 
 	if (!review) {
-		return <p>Loading ...</p>;
+		return <p className='review-loading'>Loading ...</p>;
 	}
 
 	return (
