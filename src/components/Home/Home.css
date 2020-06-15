@@ -15,3 +15,35 @@
     align-items: center;
     font-weight: 600;
 }
+
+.recently-added {
+    /* border: solid red; */
+    background: #c1c4b9;
+    border-radius: 5px;
+    width: 90vw;
+    padding: 1rem;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    overflow: auto;
+}
+.recently-added-image {
+    width: 200px;
+    margin: 0 1rem 0 0;
+}
+.see-more-div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.see-more-movies {
+    background: #cdd1c4;
+    width: 200px;
+    padding: 2rem 0;
+    margin-right: 1rem;
+    text-align: center;
+}
+.see-more-link {
+    text-decoration: none;
+    color: #30323d;
+}
