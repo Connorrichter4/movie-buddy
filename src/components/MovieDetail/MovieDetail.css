@@ -33,6 +33,23 @@
 	width: 70vw;
 }
 
-.movie-image {
+.movie-detail-image {
 	height: 300px;
+}
+
+.movie-back {
+	width: 90vw;
+	margin: 2rem auto 0 auto;
+	text-decoration: none;
+	color: #30323d;
+	font-size: 20px;
+	display: flex;
+	align-items: center;
+}
+.movie-back:hover {
+	text-decoration: underline;
+}
+
+.movie-back-text {
+	margin: 0 1rem;
 }

@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { APIURL } from '../../config';
 import ReactPlayer from 'react-player';
+import { ArrowLeftCircle } from 'react-bootstrap-icons';
 import './MovieDetail.css';
 
 function MovieDetail({ movieId }) {
@@ -31,11 +32,15 @@ function MovieDetail({ movieId }) {
 
 	return (
 		<div>
+			<Link to='/movies' className='movie-back'>
+				<ArrowLeftCircle size='20px' />
+				<p className='movie-back-text'>Back to movies</p>
+			</Link>
 			<h1 className='movie-header'>
 				{movie.title} - ({movie.year_released})
 			</h1>
 			<div className='movie-container'>
-				<img src={movie.image_url} alt={movie.title} className='movie-image' />
+				<img src={movie.image_url} alt={movie.title} className='movie-detail-image' />
 				<p className='description'>{movie.description}</p>
 			</div>
 			<div className='divider'>

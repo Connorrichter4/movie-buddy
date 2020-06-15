@@ -12,6 +12,7 @@ function MovieList() {
 		fetch(`${APIURL}/movies/`)
 			.then((res) => res.json())
 			.then((data) => {
+				data.sort((a, b) => (a.title > b.title ? 1 : -1));
                 setMovies(data);
                 console.log(data);
 			})
@@ -29,7 +30,7 @@ function MovieList() {
 	}
 
 	return (
-		<div>
+		<div className='movie-list-container'>
 			<h1>
 				Movies
 				{localStorage.getItem('token') && (
@@ -38,11 +39,13 @@ function MovieList() {
 					</Link>
 				)}
 			</h1>
-			{movies.map((movie) => (
-				<Link to={`/movies/${movie.id}`} key={movie.id} className='movie-link'>
-					<img className='movie-image' src={movie.image_url} alt={movie.title} />
-				</Link>
-			))}
+			<div className='movie-grid'>
+				{movies.map((movie) => (
+					<Link to={`/movies/${movie.id}`} key={movie.id} className='movie-link'>
+						<img className='movie-list-image' src={movie.image_url} alt={movie.title} />
+					</Link>
+				))}
+			</div>
 		</div>
 	);
 }
