@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { APIURL } from '../../config';
-import { PlusCircle } from 'react-bootstrap-icons'
-import './MovieList.css'
+import { PlusCircle } from 'react-bootstrap-icons';
+import './MovieList.css';
 
 function MovieList() {
 	const [movies, setMovies] = useState([]);
@@ -13,13 +13,13 @@ function MovieList() {
 			.then((res) => res.json())
 			.then((data) => {
 				data.sort((a, b) => (a.title > b.title ? 1 : -1));
-                setMovies(data);
-                console.log(data);
+				setMovies(data);
+				console.log(data);
 			})
 			.catch(() => {
 				setError(true);
 			});
-	},[]);
+	}, []);
 
 	if (error) {
 		return (
@@ -41,8 +41,15 @@ function MovieList() {
 			</h1>
 			<div className='movie-grid'>
 				{movies.map((movie) => (
-					<Link to={`/movies/${movie.id}`} key={movie.id} className='movie-link'>
-						<img className='movie-list-image' src={movie.image_url} alt={movie.title} />
+					<Link
+						to={`/movies/${movie.id}`}
+						key={movie.id}
+						className='movie-link'>
+						<img
+							className='movie-list-image'
+							src={movie.image_url}
+							alt={movie.title}
+						/>
 					</Link>
 				))}
 			</div>
