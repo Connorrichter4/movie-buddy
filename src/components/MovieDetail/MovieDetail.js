@@ -35,7 +35,7 @@ function MovieDetail({ movieId }) {
 				{movie.title} - ({movie.year_released})
 			</h1>
 			<div className='movie-container'>
-				<img src={movie.image_url} alt={movie.title} />
+				<img src={movie.image_url} alt={movie.title} className='movie-image' />
 				<p className='description'>{movie.description}</p>
 			</div>
 			<div className='divider'>

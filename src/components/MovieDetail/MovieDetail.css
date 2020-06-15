@@ -32,3 +32,7 @@
 .divider div:last-child {
 	width: 70vw;
 }
+
+.movie-image {
+	height: 300px;
+}
