@@ -67,7 +67,7 @@ function MovieDetail({ movieId }) {
 					</Link>
 				))}
 			</div>
-			{movie.reviews.length === 0 && <div>There are no reviews yet!</div>}
+			{movie.reviews.length === 0 && <div className='movie-reviews'>There are no reviews yet!</div>}
 		</div>
 	);
 }

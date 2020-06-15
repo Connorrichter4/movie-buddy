@@ -53,3 +53,9 @@
 .movie-back-text {
 	margin: 0 1rem;
 }
+
+.movie-reviews {
+	padding: 1rem;
+    text-align: center;
+	font-size: 20px;
+}
