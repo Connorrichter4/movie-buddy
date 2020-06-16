@@ -73,3 +73,7 @@
     text-decoration: underline;
     border: solid 1px #30323d;
 }
+.edit-container {
+    width: 60vw;
+    margin: 0 auto;
+}

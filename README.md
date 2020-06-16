@@ -3,13 +3,13 @@
 ## Project Deployment
 
 This project was deployed using Heroku.
-- Frontend
+- Frontend Deployed:
 https://moviebuddy-frontend.herokuapp.com/
 
-- Backend
+- Backend Deployed:
 https://moviebuddy-backend.herokuapp.com/movies/
 
-- Backend Repository
+- Backend Repository:
 https://github.com/Connorrichter4/movie-buddy-backend
 
 
@@ -45,6 +45,7 @@ MovieBuddy is a site to post reviews, share recommendations, and create watch li
 ### Movie Page
 ![Screen Shot 2020-06-16 at 8 25 05 AM](https://user-images.githubusercontent.com/58124052/84780410-27c96580-afab-11ea-8e96-934e6ffee1cc.png)
 ### Review Page Edit
+![Screen Shot 2020-06-16 at 8 37 40 AM](https://user-images.githubusercontent.com/58124052/84781653-b68ab200-afac-11ea-9d1e-9456a4eae2ad.png)
 
 ## Wireframes
 

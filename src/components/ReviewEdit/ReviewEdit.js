@@ -69,7 +69,7 @@ function ReviewEdit(props) {
 	}
 
 	return (
-		<>
+		<div className='edit-container'>
 			<h1>Edit Review</h1>
 			<ReviewForm
 				review={review}
@@ -77,7 +77,7 @@ function ReviewEdit(props) {
 				handleSubmit={handleSubmit}
 				validate={validate}
 			/>
-		</>
+		</div>
 	);
 }
 

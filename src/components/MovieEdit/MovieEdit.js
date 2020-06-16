@@ -84,7 +84,7 @@ function MovieEdit(props) {
 	}
 
 	return (
-		<>
+		<div className='edit-container'>
 			<h1>Edit Movie</h1>
 			<MovieForm
 				handleChange={handleChange}
@@ -92,7 +92,7 @@ function MovieEdit(props) {
 				validate={validate}
 				handleSubmit={handleSubmit}
 			/>
-		</>
+		</div>
 	);
 }
 
