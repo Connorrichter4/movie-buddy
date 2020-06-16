@@ -11,12 +11,6 @@ function NavBar(props) {
 				MovieBuddy
 			</Link>
 			<div className='right-side-nav'>
-				{/* <Link to='/movies' className='nav-link'>
-					Movies
-				</Link>
-				<Link to='/reviews' className='nav-link'>
-					Reviews
-				</Link> */}
 				<Toggle
 					render={({ on, toggle }) => (
 						<div>
@@ -26,6 +20,15 @@ function NavBar(props) {
 							{on && (
 								<div className='side-bar-container' onClick={toggle}>
 									<div className='side-bar'>
+										<Link to='/' className='nav-link menu-item'>
+											Home
+										</Link>
+										<Link to='/movies' className='nav-link menu-item'>
+											Movies
+										</Link>
+										<Link to='/reviews' className='nav-link menu-item'>
+											Reviews
+										</Link>
 										{!localStorage.getItem('token') && (
 											<>
 												<Link to='/signup' className='nav-link menu-item'>
@@ -39,12 +42,6 @@ function NavBar(props) {
 										)}
 										{localStorage.getItem('token') && (
 											<>
-												<div
-													to='/logout'
-													className='nav-link menu-item'
-													onClick={props.handleLogout}>
-													Log Out
-												</div>
 												<Link to='/create/movie' className='nav-link menu-item'>
 													Add A Movie
 												</Link>
@@ -53,14 +50,14 @@ function NavBar(props) {
 													className='nav-link menu-item'>
 													Create A Review
 												</Link>
+												<Link
+													to='/logout'
+													className='nav-link menu-item'
+													onClick={props.handleLogout}>
+													Log Out
+												</Link>
 											</>
 										)}
-										<Link to='/movies' className='nav-link menu-item'>
-											Movies
-										</Link>
-										<Link to='/reviews' className='nav-link menu-item'>
-											Reviews
-										</Link>
 									</div>
 								</div>
 							)}
