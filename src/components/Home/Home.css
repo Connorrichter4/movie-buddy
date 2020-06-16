@@ -33,6 +33,7 @@
 }
 .recently-added-image {
     width: 200px;
+    height: 300px;
     margin: 0 1rem 0 0;
 }
 .recently-added-image:hover, .see-more-movies:hover {
