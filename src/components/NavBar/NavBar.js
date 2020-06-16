@@ -50,12 +50,11 @@ function NavBar(props) {
 													className='nav-link menu-item'>
 													Create A Review
 												</Link>
-												<Link
-													to='/logout'
+												<div
 													className='nav-link menu-item'
 													onClick={props.handleLogout}>
 													Log Out
-												</Link>
+												</div>
 											</>
 										)}
 									</div>
