@@ -44,13 +44,22 @@ function MovieCreate() {
 				},
 				body: JSON.stringify(movie),
 			})
-				.then((response) => response.json())
+				.then((response) => {
+					console.log(response.ok);
+					if (response.ok) {
+						return response.json();
+					} else {
+						setValidate(true);
+					}
+				})
 				.then((data) => {
 					console.log(data);
 					setNewMovieId(data.id);
 					setSuccess(true);
 				})
-				.catch(console.error);
+				.catch(() => {
+					setValidate(true);
+				});
 		}
 	};
 

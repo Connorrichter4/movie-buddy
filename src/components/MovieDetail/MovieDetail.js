@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 import { APIURL } from '../../config';
 import ReactPlayer from 'react-player';
 import { ArrowLeftCircle } from 'react-bootstrap-icons';
@@ -8,6 +8,7 @@ import './MovieDetail.css';
 function MovieDetail({ movieId }) {
 	const [movie, setMovie] = useState();
 	const [error, setError] = useState(false);
+	const [deleted, setDeleted] = useState(false);
 
 	useEffect(() => {
 		fetch(`${APIURL}/movies/${movieId}`)
@@ -21,6 +22,22 @@ function MovieDetail({ movieId }) {
 			});
 		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, []);
+
+	const deleteMovie = () => {
+		fetch(`${APIURL}/movies/${movieId}`, {
+			method: 'DELETE',
+			headers: {
+				'Content-Type': 'application/json',
+				Authorization: `Bearer ${localStorage.getItem('token')}`,
+			},
+		}).then(() => {
+			setDeleted(true);
+		});
+	};
+
+	if (deleted) {
+		return <Redirect to='/movies' />;
+	}
 
 	if (error) {
 		return <div>There was an error retrieving the code</div>;
@@ -41,7 +58,7 @@ function MovieDetail({ movieId }) {
 			</h1>
 			<div>
 				<Link to={`/movies/edit/${movie.id}`}>Edit</Link>
-				{/* <button onClick={deleteReview}>Delete</button> */}
+				<button onClick={deleteMovie}>Delete</button>
 			</div>
 			<div className='movie-container'>
 				<img
