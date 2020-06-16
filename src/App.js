@@ -1,6 +1,7 @@
 import React from 'react';
 import { Route, Switch, useHistory } from 'react-router-dom';
 import NavBar from './components/NavBar/NavBar';
+import Footer from './components/Footer/Footer';
 import MovieList from './components/MovieList/MovieList';
 import MovieDetail from './components/MovieDetail/MovieDetail';
 import MovieCreate from './components/MovieCreate/MovieCreate';
@@ -89,6 +90,7 @@ function App() {
 					<Route exact path='/login' component={Login} />
 				</Switch>
 			</div>
+			<Route path='*' component={Footer} />
 		</div>
 	);
 }

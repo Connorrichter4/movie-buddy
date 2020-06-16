@@ -14,7 +14,7 @@ function ReviewList() {
 			.then((data) => {
 				data.sort((a, b) => (a.updated_at - b.updated_at ? 1 : -1));
 				setReviews(data);
-				console.log(data);
+				console.log(data)
 			})
 			.catch(() => {
 				setError(true);

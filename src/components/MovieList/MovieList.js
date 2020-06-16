@@ -14,7 +14,6 @@ function MovieList() {
 			.then((data) => {
 				data.sort((a, b) => (a.title > b.title ? 1 : -1));
 				setMovies(data);
-				console.log(data);
 			})
 			.catch(() => {
 				setError(true);

@@ -1,4 +1,7 @@
-
+.main {
+    position: relative;
+    min-height:100vh;
+}
 .submit-button {
     font-size: 20px;
     background: #30323d;
@@ -10,6 +13,7 @@
 .main-body {
     margin: 0 auto;
     padding-top: 3rem;
+    padding-bottom: 6rem;
 }
 
 .error-retrieve {
@@ -23,7 +27,6 @@
     flex-direction: column;
     width: 70vw;
     margin: 0 auto;
-    
 }
 
 .review {

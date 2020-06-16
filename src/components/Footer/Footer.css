@@ -1,0 +1,18 @@
+footer {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 2rem;
+    padding: 1rem;
+    align-items: center;
+    color: #e8c547;
+    background: #30323d;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+
+.footer-links {
+    color: #e8c547;
+    padding-left: 2rem;
+}
