@@ -53,12 +53,14 @@ function MovieDetail({ movieId }) {
 				<ArrowLeftCircle size='20px' />
 				<p className='movie-back-text'>Back to movies</p>
 			</Link>
-			<h1 className='movie-header'>
-				{movie.title} - ({movie.year_released})
-			</h1>
-			<div>
-				<Link to={`/movies/edit/${movie.id}`}>Edit</Link>
-				<button onClick={deleteMovie}>Delete</button>
+			<div className='movie-header'>
+				<h1 >
+					{movie.title} - ({movie.year_released})
+				</h1>
+				<div className='buttons'>
+					<Link to={`/movies/edit/${movie.id}`} className='edit-buttons'>Edit</Link>
+					<button onClick={deleteMovie} className='delete-buttons'>Delete</button>
+				</div>
 			</div>
 			<div className='movie-container'>
 				<img

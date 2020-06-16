@@ -56,3 +56,20 @@
     text-align: justify;
     font-size: 18px;
 }
+
+.edit-buttons, .delete-buttons {
+    border: none;
+    background: #c1c4b9;
+    color: #30323d;
+    border-radius: 5px;
+    text-decoration: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    margin: 0 1rem;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.edit-buttons:hover, .delete-buttons:hover {
+    cursor: pointer;
+    text-decoration: underline;
+    border: solid 1px #30323d;
+}

@@ -50,16 +50,21 @@ function ReviewDetail({ reviewId }) {
 		<div className='review-container'>
 			<Link to='/reviews' className='review-back'>
 				<ArrowLeftCircle size='20px' />
-				<p className='review-back-text'>
-					Back to reviews
-				</p></Link>
+				<p className='review-back-text'>Back to reviews</p>
+			</Link>
 			<h1>{review.title}</h1>
 			<p>Written by: {review.owner}</p>
 			<p>{review.review_body}</p>
 			{review.owner === localStorage.getItem('username') && (
-				<div>
-					<Link to={`/reviews/edit/${reviewId}`}>Edit</Link>
-					<button onClick={deleteReview}>Delete</button>
+				<div className='review-buttons'>
+					<Link
+						to={`/reviews/edit/${reviewId}`}
+						className='edit-buttons'>
+						Edit
+					</Link>
+					<button onClick={deleteReview} className='delete-buttons'>
+						Delete
+					</button>
 				</div>
 			)}
 		</div>
