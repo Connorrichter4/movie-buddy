@@ -38,6 +38,13 @@ MovieBuddy is a site to post reviews, share recommendations, and create watch li
 - Gold:
 - [ ] Users can search for other users to recommend movies to
 - [ ] Social O-Auth using Github, Facebook, and Twitter
+## Examples
+
+### Home Page
+![Screen Shot 2020-06-16 at 8 24 20 AM](https://user-images.githubusercontent.com/58124052/84780406-2730cf00-afab-11ea-8a30-e416474d66a0.png)
+### Movie Page
+![Screen Shot 2020-06-16 at 8 25 05 AM](https://user-images.githubusercontent.com/58124052/84780410-27c96580-afab-11ea-8e96-934e6ffee1cc.png)
+### Review Page Edit
 
 ## Wireframes
 
